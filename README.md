@@ -12,7 +12,7 @@ The core dataset for our project is the Dunnhumby dataset. It has (nearly) every
 
 - Do people take grocery shopping as a guessing game?
 	- *Awareness of the contents in their inventory*
-- Do people take the feeling of a hunger as an advisor leading them to the store?
+- Do people take hunger as an advisor to the store?
 	- *Intention vs. impulse*
 - Do people join the pantry minimalist movement?
 	- *Preventing overstocking*
