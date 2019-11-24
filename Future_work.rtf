@@ -1,0 +1,33 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Oblique;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww29380\viewh12840\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs36 \cf0 Outliers:\
+
+\f1\b0 	- There are plots with significant outliers. Let\'92s have a look at those in order to find out what they are and if the influence the dataset in any significant way. Maybe also compare how the average bill amount changes with the demographic data \
+\
+
+\f0\b Problem with average bill amount
+\f1\b0 \
+as opposed to using the average bill amount, use either number of items or average item price because:\
+
+\f2\i Average(bill + coupons) ~ average(# of items) * average_item_price
+\f0\i0\b \
+\
+
+\f1\b0 We want to plot vs. either the first, or the second, but not their product! Why?\
+The average number of items purchased is heavily related to haw many family members there are (large family = more stuff to buy)\
+The average item price is more related to how wealthily a person is (more money = more fancy organic products). \
+\
+
+\f0\b Problem with looking at the average price of the most expensive item:\
+
+\f1\b0 The more stuff you buy, the more likely you are to buy something expensive. Therefore, max price is a bad indicator. Better use average price per product or sth like that. (we already have a variable calculating the average product price btw \'91
+\f2\i df_transaction_data_cleaned['PRODUCT_PRICE'] = (sales_value - (retail_disc + coupon_match_disc)) / quantity\'92 
+\f1\i0 )\
+\
+}
