@@ -8,22 +8,21 @@ The purpose of this project is to explore the trends in transactions, recognize 
 
 The core dataset for our project is the Dunnhumby dataset. It has (nearly) everything we need to tackle our research questions and find out the most reasonable answers.
 
-## Research questions
+## Main Research Question
 
-- Do people take grocery shopping as a guessing game?
-	- *Awareness of the contents in their inventory*
-- Do people take hunger as an advisor to the store?
-	- *Intention vs. impulse*
-- Do people join the pantry minimalist movement?
-	- *Preventing overstocking*
-- Are people realistic about their cooking enthusiasm?
-	- *Keep cooking simple*
-- Do people create a positive eating environment?
-	- *For them and their family*
-- Quality over quantity?
-	- *The effect of campaings*
-- Interplay between income and expenses?
-	- *Family values*
+In this project we try to address the following research question:
+
+- Is there an interplay between income and expenses?
+
+### Sub-Questions
+
+In particular, we are interested in the following sub-questions:
+
+- How do households choose to organize their limited annual income according to their shopping expenses?
+
+- Can we infer different household types based on the relation between their income and transaction statistics?
+
+- Are some demographic properties of the household's indicators based on this relation as well? That is, can we indirectly infer common family values from this data? 
 
 ## Dataset
 
@@ -32,7 +31,7 @@ This dataset will be the main dataset used for our project. It can be downloaded
 The Dunnhumby dataset contains household level transactions over the period of two years from a group of 2,500 households that are frequent shoppers at a retailer. It contains the purchases of each household, and not just those arising from a limited number of categories. For certain households, demographic information as well as direct marketing contact history are included.
 The data is in a textual form, represented as a collection of .csv files where each file contains information from a certain table of a relational database. As such, the data can easily be loaded into a local schema or parsed using Pandas. We also expect the data to not contain many inconsistencies, since it must be exported from a database with a relational model.
 
-A description of some of the most useful files:
+Below we provide a description of some of the useful files for our project:
 
 `hh_demographic.csv` - 801 rows, ~45 KB
 This table contains demographic information for a portion of the households.
@@ -73,34 +72,34 @@ Columns:
 - BRAND: Type of manufacturer, Private or National
 - CURR_SIZE_OF_PRODUCT: Package size of the product, textual, number + various measurement units
 
-The tables `campaign_table.csv` and `campaign_desc.csv` provide information about the campaigns received by each household and the starting and ending date of each campaign. The tables `coupon.csv` and `coupon_redempt.csv` provide information about all the coupons sent to customers as part of the campaign, as well as the products for which each coupon is redeemable, and also which household redeemed which coupon and when. All of this information overall will be useful to analyze the effectiveness of each campaign.
+## List of steps completed until milestone 2
 
-The final table `causal_data.csv` (36786524 rows, ~680 MB) contains information about how all the products were marketed in every store, each week. Information whether and how the product was on the display in the store and in mailed catalouges is provided in categorical format. As of now, we believe we may not require this information in its full form for our analysis. Nevertheless, we will use it as a way to look more deeper into the selected customer's behaviour when buying certain items.
+1. Definition of project goal 
+- Identification of influencing factors to analyse
+2. Preprocessing
+- Loading the data
+- Identifying and handling missing and incomplete data
+- Using the formulas in the documentation to calculate new features
+- Type conversion and distribution analysis of categorical data
+- Data merging
+3. Data Analysis
+- Calculation of derived statistics to measure household expenses
+- Analysis of underlying distributions of key statistics
+- Correlation comparison
+- Analysis of joint distributions of income and statistics measuring expenses
+4. Trend discovery
+- Distribution of coupon usage across income categories
+- Distibution of expenses across days of the week
+- Mapping between income, expenses and product categories
+- Engel curves
+- Demographic analysis of 4 households groups derived from income and expenses
+5. Applied ML
+- Cluster discovery in households based on demographics and income
 
+## Planned steps for until milestone 3
 
-### [Recipe1M+](http://pic2recipe.csail.mit.edu)
-In addition to the Dunnhumby dataset, we wish to enrich our data with external information. For one of our research questions we require information about which food products are commonly combined together in recipes to make various dishes, so that we are able to analyse cooking habits of the shoppers.
-The Recipe1M+ dataset contains over 1 million recipe entries, where each recipe is linked to a list of required ingredients, list of required steps and an image of the prepared dish. The original purpose of this dataset was to create a deep learning recipe classifier.
-The dataset can be downloaded only by registered users and, after creating an account and logging-in to the website, the dataset can be accessed. As we solely require the ingredients, we only downloaded the file containing lists of ingredients attached to the recipe ids.
-This file (~350 MB) was encoded in JSON format and can be easily parsed.
-To successfully merge this data with the previous one, we will need to find which of the products in the Dunnhumby dataset appear in the recipe ingredients and construct a mapping. Therefore, after this process we might end up using only the part of the ingredient data from Recipe1M+.
-
-
-## A list of internal milestones up until project milestone 2
-
-- Perform data preparation and store data for analysis
-- Inspect the data for inconsistencies
-- Compute product prices using formula in the description
-- Analyze the data on transaction level for shopping patterns
-- Find a link between shopping products and recipes
-- Find keywords in product names related to healthy lifestyle
-- Analyze the data on campaign level
-- Categorize households based on income and expenses
-
-
-## Questions for TAs
-
-- Are the scope of our project and research questions adequate for this course? If it's too broad or too narrow, what would be your recommendation to change it?
-- Do you suggest to us including any external data sources? If yes, what kind?
-- What types of visualizations might be the best for data such as ours?
-- Should we show results even when we do not find any common pattern? Is it fine to discard a research question in such case?
+- Dealing with outliers in data and plots
+- Interpolation of probability distributions of categorical features
+- More thorough analysis of derived statistics measuring expenses: limitations, robustness, improvement
+- Identify meaning of household clusters and expand the ML analysis
+- Writing of data story
