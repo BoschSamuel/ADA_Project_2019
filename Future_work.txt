@@ -1,0 +1,15 @@
+**Outliers**:
+There are plots with significant outliers. Let’s have a look at those in order to find out what they are and if the influence the dataset in any significant way. Maybe also compare how the average bill amount changes with the demographic data 
+
+
+**Problem with average bill amount**
+as opposed to using the average bill amount, use either number of items or average item price because:
+Average(bill + coupons) ~ average(# of items) * average_item_price
+
+We want to plot vs. either the first, or the second, but not their product! Why?
+The average number of items purchased is heavily related to haw many family members there are (large family = more stuff to buy)
+The average item price is more related to how wealthily a person is (more money = more fancy organic products). 
+
+
+**Problem with looking at the average price of the most expensive item**:
+The more stuff you buy, the more likely you are to buy something expensive. Therefore, max price is a bad indicator. Better use average price per product or sth like that. (we already have a variable calculating the average product price btw ‘df_transaction_data_cleaned['PRODUCT_PRICE'] = (sales_value - (retail_disc + coupon_match_disc)) / quantity’ )
