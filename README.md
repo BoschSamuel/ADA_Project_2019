@@ -4,8 +4,6 @@
 
 Let’s face it: grocery shopping is not a skill most of us intentionally took the time to pursue. However, people more than often find themselves in a situation where they return home with two bags of groceries and realize that they are missing the only item they initially were out for. Sometimes, not having a clear idea about our inventory state, we end up being tempted into the all sorts of treats that are over and above our necessities. Or we buy products to showcase our cooking abilities for the family dinner but somehow we end up with the fridge full of everything, hoping to roll up our sleeves tomorrow. We are often surprised by the amount of items we throw because the expiration date passed two months ago! However, that could change...
 
-The purpose of this project is to explore the trends in transactions, recognize anomalies, find connection between items and delicious recipes, discover the intentions behind the transactions, classify the households to get better understanding of their values, and gain insights on whether or not people take grocery shopping for granted. Having this information in our hands, we can draw conclusions and propose effective methods to people in order to make their next visit to the market an enjoyable experience.
-
 The core dataset for our project is the Dunnhumby dataset. It has (nearly) everything we need to tackle our research questions and find out the most reasonable answers.
 
 ## Main Research Question
