@@ -22,7 +22,7 @@ In particular, we are interested in the following sub-questions:
 
 ## Link to data story
 
-[https://Bani57.github.io/DataStoryAdaProject2019/](https://Bani57.github.io/DataStoryAdaProject2019/)
+[https://Bani57.github.io/HowToRideTheShoppingCart](https://Bani57.github.io/HowToRideTheShoppingCart)
 
 ## Dataset
 
